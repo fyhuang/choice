@@ -6,3 +6,7 @@ resp = choices.Menu(posts, ['edit', 'delete', 'publish'], ['newpost', 'exit']).a
 print(resp)
 
 resp = choices.Input('Enter an integer', int).ask()
+
+resp = choices.Binary('Yes or no?', True).ask()
+resp = choices.Binary('yes or No?', False).ask()
+resp = choices.Binary('yes or no?').ask()

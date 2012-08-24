@@ -51,7 +51,7 @@ class BasicTermMenu(object):
                         print(" {}: {}".format(ga[0], ga[1]))
 
             print("\nEnter number or name; return for next page")
-            resp = raw_input('? ')
+            resp = raw_input('? ').strip()
             print()
             if len(resp) == 0:
                 curr_page += 1
@@ -140,12 +140,40 @@ class BasicTermInput(object):
             return self.ask()
 
 
+class BasicTermBinaryChoice(object):
+    def __init__(self, prompt, default):
+        self.prompt = prompt
+        self.default = default
+
+    def ask(self):
+        if self.default is None:
+            prompt = '{}\n(y/n)? '.format(self.prompt)
+        elif self.default == True:
+            prompt = '{}\n(Y/n)? '.format(self.prompt)
+        elif self.default == False:
+            prompt = '{}\n(y/N)? '.format(self.prompt)
+        resp = raw_input(prompt).lower().strip()
+
+        if len(resp) == 0 and self.default is not None:
+            return self.default
+        if resp == 'y' or resp == 'yes' or resp == '1' or resp == 'true':
+            return True
+        elif resp == 'n' or resp == 'no' or resp == '0' or resp == 'false':
+            return False
+        else:
+            print("Please answer 'y'es or 'n'o")
+            return self.ask()
+
+
 # TODO: progressive enhancement
 _MenuType = BasicTermMenu
 _InputType = BasicTermInput
+_BinaryChoiceType = BasicTermBinaryChoice
 
 
 def Menu(choices, actions, global_actions=None, title=None):
     return _MenuType(choices, actions, global_actions, title)
-def Input(prompt, parser):
+def Input(prompt, parser=str):
     return _InputType(prompt, parser)
+def Binary(prompt, default=None):
+    return _BinaryChoiceType(prompt, default)
