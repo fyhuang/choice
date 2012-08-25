@@ -20,3 +20,10 @@ entree = choices.Menu(['steak', 'potatoes', 'eggplant'])
 ~~~
 
 [choices]() automatically displays the best UI available to the user: basic text console, curses, or GUI windows. (curses and GUI are in development!)
+
+Requirements
+============
+
+For basic functionality:
+
+* Python 2.7 or 3
