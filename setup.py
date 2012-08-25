@@ -1,10 +1,10 @@
 from setuptools import setup
 
-setup(name='choices',
+setup(name='choice',
       version='0.1',
       author='Frank Huang',
       author_email='me@nongraphical.com',
-      url='https://github.com/fyhuang/choices',
+      url='https://github.com/fyhuang/choice',
 
       description='Easy request and response GUI for Python',
       classifiers=[
@@ -15,12 +15,12 @@ setup(name='choices',
 
           'Development Status :: 3 - Alpha',
           'Intended Audience :: Developers',
-          'Topics :: Software Development :: Libraries :: Python Modules',
+          'Topic :: Software Development :: Libraries :: Python Modules',
           
           'Environment :: Console',
           ],
 
-      packages=['choices'],
+      packages=['choice'],
 
       install_requires=[
           ],

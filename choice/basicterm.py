@@ -4,7 +4,7 @@ import sys
 if sys.version_info.major < 3:
     input = raw_input
 
-from choices.util import idNameList
+from choice.util import idNameList
 
 class BasicTermMenu(object):
     BACK_CHAR = 'b'
