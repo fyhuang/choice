@@ -8,7 +8,7 @@ _MenuType = BasicTermMenu
 _InputType = BasicTermInput
 _BinaryChoiceType = BasicTermBinaryChoice
 
-def Menu(choices, actions, global_actions=None, title=None):
+def Menu(choices, actions=None, global_actions=None, title=None):
     return _MenuType(choices, actions, global_actions, title)
 def Input(prompt, parser=str):
     return _InputType(prompt, parser)
