@@ -16,7 +16,7 @@ howmany = choice.Input('How many pies?', int).ask()
 print("You ordered {} pies".format(howmany))
 
 # Choose from a set of options
-entree = choice.Menu(['steak', 'potatoes', 'eggplant'])
+entree = choice.Menu(['steak', 'potatoes', 'eggplant']).ask()
 ~~~
 
 choice automatically displays the best UI available to the user: basic text console, curses, or GUI windows. (curses and GUI are in development!)

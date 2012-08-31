@@ -1,5 +1,19 @@
 import choice
 
+# Get a yes or no response (default is no)
+confirm = choice.Binary('Are you sure you want to delete?', False).ask()
+if confirm:
+    deleteIt()
+
+# Input an arbitrary value, check for correctness
+howmany = choice.Input('How many pies?', int).ask()
+print("You ordered {} pies".format(howmany))
+
+# Choose from a set of options
+entree = choice.Menu(['steak', 'potatoes', 'eggplant']).ask()
+print("You choice {}".format(entree))
+
+
 posts = ['post {}'.format(num) for num in range(15)]
 
 resp = choice.Menu(posts, ['edit', 'delete', 'publish'], ['newpost', 'exit']).ask()
