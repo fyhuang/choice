@@ -21,9 +21,22 @@ entree = choice.Menu(['steak', 'potatoes', 'eggplant']).ask()
 
 choice automatically displays the best UI available to the user: basic text console, curses, or GUI windows. (curses and GUI are in development!)
 
-Requirements
-============
+Requirements and Installation
+=============================
 
 For basic functionality:
 
 * Python 2.7 or 3
+
+To install, just run:
+
+~~~
+pip install choice
+~~~
+
+Documentation
+=============
+
+API docs are coming soon. More in-depth documentation can be found on Github:
+
+https://github.com/fyhuang/choice/wiki
