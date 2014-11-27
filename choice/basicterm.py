@@ -20,12 +20,12 @@ class BasicTermMenu(object):
     def pick_choice(self):
         curr_page = 0
         # Round up
-        num_pages = (len(self.choices) + BasicTermMenu.PAGE_SIZE - 1) // BasicTermMenu.PAGE_SIZE
+        num_pages = (len(self.choices) + self.PAGE_SIZE - 1) // self.PAGE_SIZE
 
         print(self.title or "Make a choice:")
         while True:
-            start = curr_page * BasicTermMenu.PAGE_SIZE
-            end = start + BasicTermMenu.PAGE_SIZE
+            start = curr_page * self.PAGE_SIZE
+            end = start + self.PAGE_SIZE
             for i, c in enumerate(self.choices[start:end]):
                 print(" {}: {}".format(i, c[1]))
             if self.global_actions is not None:
@@ -54,7 +54,7 @@ class BasicTermMenu(object):
         print("Select an action:")
         for i, ac in enumerate(self.actions):
             print(" {}: {}".format(i, ac[1]))
-        print(" {}: back".format(BasicTermMenu.BACK_CHAR))
+        print(" {}: back".format(self.BACK_CHAR))
         resp = input('? ')
         print()
         return str(resp)
@@ -90,7 +90,7 @@ class BasicTermMenu(object):
         action = None
         while action is None:
             resp = self.pick_action()
-            if resp == BasicTermMenu.BACK_CHAR:
+            if resp == self.BACK_CHAR:
                 return self.ask()
             try:
                 resp_num = int(resp)
